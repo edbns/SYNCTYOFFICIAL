@@ -13,11 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SYNCTY",
-  description: "Gateway",
+  title: "SYNTH SOCIETY | Designed by Mind, Made by Machine",
+  description:
+    "SYNCTY is a post-photography visual movement blending AI, fashion, and curated chaos. Designed by mind. Made by machine. Access is not guaranteed.",
   icons: {
-    icon: "/Favicon.png",
-    apple: "/Favicon.png",
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "any" },
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+    ],
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 
@@ -31,6 +36,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
